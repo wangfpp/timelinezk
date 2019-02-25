@@ -1,0 +1,14 @@
+{
+  "name": "timelinezk",
+  "version": "1.0.0",
+  "description": "TimeLinejs3修改",
+  "main": "./js/timeline.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "timeline"
+  ],
+  "author": "wangfpp",
+  "license": "ISC"
+}

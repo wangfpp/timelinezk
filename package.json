@@ -1,10 +1,14 @@
 {
   "name": "timelinezk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TimeLinejs3修改",
   "main": "./js/timeline.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+github.com:wangfpp/timelinezk.git"
   },
   "keywords": [
     "timeline"

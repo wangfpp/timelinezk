@@ -21,6 +21,31 @@
 		};
 		let timeline = new TL.Timeline(node, timeline_json, options); # 挂载的节点 events事件 配置参数
 
+# 关于language的配置
+language还没有很好的入手解决方法 暂时的解决方法如下
+- 拷贝插件的js目录下的local语言配置文件到你的项目某一目录
+- 在options配置中增加script_path: folder,  folder为你上一步拷贝的目录
+- example: 我把local拷贝到项目的static目录下
+		let options = {
+			......,
+			script_path: 'static',
+			language: 'zh-cn',
+			......
+		}
+
+# 关于日期格式的配置
+- 最暴力 便捷的是修改loca的配置
+- 现在增加一个dayconfig配置项 'day_day'或者 'day_num'
+- 'day_day' 显示为  3日  4日
+- 'day_num' 显示为  3号  4号
+-  无此需求课不填写此配置项  此配置目前只适配中文
+- example:
+		let options = {
+			......,
+			dayconfig: 'day_day' // 'day_num'
+			......
+		}
+
 # 参考文件
 [TimeLine官网](https://timeline.knightlab.com/)  
 [TimeLine Github地址](https://github.com/NUKnightLab/TimelineJS3)

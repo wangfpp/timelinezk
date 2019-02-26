@@ -44,7 +44,7 @@ TL.Bind = function (/*Function*/ fn, /*Object*/ obj) /*-> Object*/ {
 trace = function( msg ) {
 	if (TL.debug) {
 		if (window.console) {
-			console.log(msg);
+			// console.log(msg);
 		} else if ( typeof( jsTrace ) != 'undefined' ) {
 			jsTrace.send( msg );
 		} else {
@@ -12617,6 +12617,8 @@ TL.TimeAxis = TL.Class.extend({
 	        minute: 'time_no_seconds_short',
 	        hour: 'time_no_minutes_short',
 	        day: 'full_short',
+	        day_day: 'singal_day_day',
+	        day_num: 'singal_day_num', 
 	        month: 'month_short',
 	        year: 'year',
 	        decade: 'year',
@@ -12671,23 +12673,25 @@ TL.TimeAxis = TL.Class.extend({
 	},
 
 	drawTicks: function(timescale, optimal_tick_width) {
-
 		var ticks = timescale.getTicks();
-
+		let isday = this.options.daycofig === '' ? false : this.options.daycofig;
+		let name = ticks['minor'].name === 'day' && isday ? this.options.daycofig : ticks['minor'].name;
 		var controls = {
-			minor: {
+			minor: { // day
 				el: this._el.minor,
-				dateformat: this.dateformat_lookup[ticks['minor'].name],
+				dateformat: this.dateformat_lookup[name],
 				ts_ticks: ticks['minor'].ticks,
 				tick_elements: this.minor_ticks
 			},
-			major: {
+
+			major: { // month
 				el: this._el.major,
 				dateformat: this.dateformat_lookup[ticks['major'].name],
 				ts_ticks: ticks['major'].ticks,
 				tick_elements: this.major_ticks
 			}
-		}
+		};
+		console.log(name, controls);
 		// FADE OUT
 		this._el.major.className = "tl-timeaxis-major";
 		this._el.minor.className = "tl-timeaxis-minor";
@@ -12705,7 +12709,7 @@ TL.TimeAxis = TL.Class.extend({
 		this.minor_ticks = this._createTickElements(
 			ticks['minor'].ticks,
 			this._el.minor,
-			this.dateformat_lookup[ticks['minor'].name],
+			this.dateformat_lookup[name],
 			ticks['major'].ticks
 		);
 
@@ -12739,7 +12743,7 @@ TL.TimeAxis = TL.Class.extend({
 					tick_text 	= TL.Dom.create("span", "tl-timeaxis-tick-text tl-animate-opacity", tick);
 
 				tick_text.innerHTML = ts_tick.getDisplayDate(this.getLanguage(), dateformat);
-
+				// console.log(tick_text.innerHTML, this.getLanguage(), dateformat);
 				tick_elements.push({
 					tick:tick,
 					tick_text:tick_text,
@@ -13133,6 +13137,7 @@ TL.Timeline = TL.Class.extend({
 			menubar_height: 			0,
 			skinny_size: 				650,
 			medium_size: 				800,
+			daycofig: '',
 			swiper: {
                 isable: false,
                 time_gap: 3000

@@ -64,6 +64,8 @@
     "dateformats": {
         "full_long": "dddd',' yyyy年 mmm d日'um' HH:MM",
         "full_short": "mmm d日",
+        "singal_day_day": " d日",
+        "singal_day_num": " d号",
         "full": "yyyy年mmmm d日",
         "month_short": "mmm",
         "time_no_seconds_small_date": "HH:MM'<br/><small>'yyyy年mmmm d日'</small>'",

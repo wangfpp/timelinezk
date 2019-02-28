@@ -40,11 +40,16 @@ language还没有很好的入手解决方法 暂时的解决方法如下
 - 'day_num' 显示为  3号  4号
 -  无此需求课不填写此配置项  此配置目前只适配中文
 - example:
-		let options = {
-			......,
-			dayconfig: 'day_day' // 'day_num'
-			......
+		let options = {  
+			......,  
+			dayconfig: 'day_day' // 'day_num'  
+			......  
 		}
+
+## 效果图
+
+<img src="./timeline.png" height="300px" height="auto" alt="">
+
 
 # 参考文件
 [TimeLine官网](https://timeline.knightlab.com/)  

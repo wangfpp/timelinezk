@@ -46,10 +46,19 @@ language还没有很好的入手解决方法 暂时的解决方法如下
 			......  
 		}
 
+# 支持多事件的箭头切换
+- 当天的箭头只作用与当天的事件
+
+# 支持一事多图
+- 一个事件支持显示多张图片(目前支持最多4张图片)
+
 ## 效果图
 
 <img src="./timeline.png" height="300px" height="auto" alt="">
 
+## Something TODO
+- 语言配置的完善
+- 目前发现轮播有Bug
 
 # 参考文件
 [TimeLine官网](https://timeline.knightlab.com/)  

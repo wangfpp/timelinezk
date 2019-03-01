@@ -1114,8 +1114,9 @@ only screen and (max-device-width:500px) {
 
 .tl-timenav {
     width: 100%;
-    background: url(./icons/bg1.png) 0 0 repeat-x;
-    background-color: #f2f2f2;
+     background: url(./icons/precise_bg.png) 0 0 repeat-x; 
+    /* background-color: #f2f2f2; */
+    /*background: rgba(0, 0, 0, .2);*/
     position: relative;
     overflow: hidden;
     border-top: 1px solid #102EC5;
@@ -1872,7 +1873,7 @@ only screen and (max-device-width:500px) {
 }
 
 .tl-timeaxis-background {
-    height: 39px;
+    height: 70px;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -1883,7 +1884,7 @@ only screen and (max-device-width:500px) {
 }
 
 .tl-timeaxis {
-    height: 39px;
+    height: 70px;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -1894,7 +1895,7 @@ only screen and (max-device-width:500px) {
 .tl-timeaxis .tl-timeaxis-content-container {
     position: relative;
     bottom: 0;
-    height: 39px
+    height: 70px
 }
 
 .tl-timeaxis .tl-timeaxis-content-container .tl-timeaxis-major,
@@ -1930,7 +1931,7 @@ only screen and (max-device-width:500px) {
     content: "|";
     display: block;
     color: #fff;
-    width: 1px;
+    width: 0;
     overflow: hidden;
     border-left: 1px solid #bfbfbf;
     text-align: center
@@ -1966,7 +1967,7 @@ only screen and (max-device-width:500px) {
 }
 
 .tl-timeaxis .tl-timeaxis-content-container .tl-timeaxis-major .tl-timeaxis-tick {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 14px;
     color: #737373;
     width: 100px;
@@ -1976,8 +1977,8 @@ only screen and (max-device-width:500px) {
 .tl-timeaxis .tl-timeaxis-content-container .tl-timeaxis-major .tl-timeaxis-tick:before {
     border-color: #a6a6a6;
     font-size: 18px;
-    line-height: 18px;
-    margin-bottom: 2px;
+    line-height: 30px;
+    margin-bottom: 8px;
     margin-left: 50px
 }
 
@@ -1993,7 +1994,8 @@ only screen and (max-device-width:500px) {
     opacity: 0;
     white-space: normal;
     padding-left: 2px;
-    padding-right: 2px
+    padding-right: 2px;
+    transform: translateX(-7px);
 }
 
 .tl-timeaxis .tl-timeaxis-content-container .tl-timeaxis-minor .tl-timeaxis-tick .tl-timeaxis-tick-text span {
@@ -2089,7 +2091,8 @@ only screen and (max-device-width:500px) {
     position: relative;
     width: 100%;
     height: 100%;
-    z-index: 3
+    z-index: 3;
+    padding-top: 35px;
 }
 
 .tl-slide .tl-slide-content-container .tl-slide-content {
@@ -2660,7 +2663,8 @@ only screen and (max-device-width:500px) {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1
+    z-index: 1;
+    background: transparent !important;
 }
 
 .tl-storyslider .tl-slider-touch-mask {
@@ -2673,7 +2677,8 @@ only screen and (max-device-width:500px) {
 }
 
 .tl-storyslider .tl-slider-container-mask {
-    background: url('./icons/bg2.png') 0 0;
+    background: url('./icons/precise_bg.png') 0 0; 
+    /*background: rgba(0, 0, 0, .4);*/
     text-align: center;
     width: 100%;
     height: 100%;
@@ -3280,7 +3285,7 @@ only screen and (max-device-width:500px) {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
-    background-color: #fff;
+    /* background-color: #fff; */
     color: #737373;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -3341,3 +3346,57 @@ only screen and (max-device-width:500px) {
 .tl-rtl .tl-credit {
     text-align: left
 }
+
+/*大图展示*/
+.image_wrapper{
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(16, 46, 197, 1);
+    background: rgba(0, 0, 0, 1);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.image_wrapper.imgOne img{
+    width: 100%;
+    height: 100%;
+}
+
+.image_wrapper.imgTwo img{
+    margin-top: 25%;
+}
+
+.image_wrapper.imgTwo img,
+.image_wrapper.imgThree img,
+.image_wrapper.imgFour img{
+    width: 50%;
+    height: 50%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.5);
+}
+
+/*箭头展示*/
+.tl-arrowBox{
+    position: absolute;
+    bottom: 75px;
+    color: rgba(45, 171, 255, 1);
+    font-size: 12px;
+    width: 30px;
+    margin-left: 65px;
+    z-index: 8;
+}
+.tl-arrowBox-left{
+    transform: rotate(-90deg);
+    display: inline-block;
+    cursor: pointer;
+}
+.tl-arrowBox-right{
+    transform: rotate(90deg);
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tl-arrowBox-left:hover,
+.tl-arrowBox-right:hover{
+    text-shadow: 0 0 2px rgb(255, 255, 1);
+}
+    

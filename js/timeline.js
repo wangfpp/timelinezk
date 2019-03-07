@@ -630,8 +630,8 @@ TL.Util = {
         }
         return "";
     },
-
     slugify: function(str) {
+        
         // borrowed from http://stackoverflow.com/a/5782563/102476
         str = TL.Util.trim(str);
         str = str.toLowerCase();
@@ -642,14 +642,18 @@ TL.Util = {
         for (var i = 0, l = from.length; i < l; i++) {
             str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
         }
+        
+        // str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+        //     .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        //     .replace(/-+/g, '-'); // collapse dashes
 
-        str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
-            .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        // str = str.replace(/^([0-9])/, '_$1');
+
+        str = str.replace(/\s+/g, '-') // collapse whitespace and replace by -
             .replace(/-+/g, '-'); // collapse dashes
-
-        str = str.replace(/^([0-9])/, '_$1');
+        
         return str;
-    },
+    }
     maxDepth: function(ary) {
         // given a sorted array of 2-tuples of numbers, count how many "deep" the items are.
         // that is, what is the maximum number of tuples that occupy any one moment

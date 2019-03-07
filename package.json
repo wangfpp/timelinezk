@@ -1,6 +1,6 @@
 {
   "name": "timelinezk",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "TimeLinejs3修改",
   "main": "./js/timeline.js",
   "scripts": {
